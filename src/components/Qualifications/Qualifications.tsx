@@ -1,14 +1,10 @@
-import { Canvas } from "@react-three/fiber";
-import Avatar from "../3Dmodels/Avatar";
-import { OrbitControls } from "@react-three/drei";
-import { Suspense, useRef, useState } from "react";
-import CanvasLoader from "../Loading/CanvaLoader";
+import { useRef } from "react";
+
 import { qualifications } from "../../constants/qualifications";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 export default function Qualifications() {
-  const [animationName, setAnimationName] = useState("idle");
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -72,16 +68,8 @@ export default function Qualifications() {
 
           <div className="work-content">
             <div className="sm:py-10 py-5 sm:px-5 px-2.5">
-              {qualifications.map((item, index) => (
-                <div
-                  key={index}
-                  onClick={() => setAnimationName(item.animation.toLowerCase())}
-                  onPointerOver={() =>
-                    setAnimationName(item.animation.toLowerCase())
-                  }
-                  onPointerOut={() => setAnimationName("idle")}
-                  className="work-content_container group"
-                >
+              {qualifications.map((item) => (
+                <div className="work-content_container group">
                   <div className="flex flex-col h-full justify-start items-center py-2">
                     <div className="work-content_logo">
                       <img className="w-full h-full" src={item.icon} alt="" />
