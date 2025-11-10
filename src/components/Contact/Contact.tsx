@@ -13,9 +13,9 @@ export default function Contact() {
 
         const templateParams = {
             from_name: name,
-            to_name: 'Ajay Shakya',
+            to_name: 'Anmol Paweriya',
             from_email: email,
-            to_email: 'ajayshakya7860@gmail.com',
+            to_email: 'paweriyaanmol@gmail.com',
             message: message,
         }
 
